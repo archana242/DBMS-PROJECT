@@ -1,0 +1,186 @@
+/* style.css (Final Version with Admin Styles) */
+
+/* --- GLOBAL STYLES & FONT --- */
+:root {
+    --primary-color: #4a90e2;
+    --danger-color: #d9534f;
+    --success-color: #5cb85c;
+    --warning-color: #f0ad4e;
+    --bg-color: #f4f7fa;
+    --panel-bg: #ffffff;
+    --text-color: #333;
+    --light-text-color: #777;
+    --border-color: #e0e0e0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    height: 100vh;
+}
+
+/* --- LOGIN PAGE STYLES --- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-form {
+    background: var(--panel-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+.login-form h2 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+.login-form .input-group { margin-bottom: 1.5rem; }
+.login-form .btn { width: 100%; margin-top: 1rem; }
+.error-text {
+    color: var(--danger-color);
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    height: 1em;
+}
+
+/* --- MAIN APP LAYOUT (for dashboard/admin) --- */
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+body:not(.login-page) {
+    overflow: hidden;
+}
+.left-panel {
+    width: 350px;
+    background-color: var(--panel-bg);
+    padding: 2rem;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    overflow-y: auto;
+}
+.right-panel {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* --- HEADER & CONTROL BOXES --- */
+.app-header h1 { font-size: 1.8rem; color: var(--primary-color); margin: 0; }
+.app-header p { font-size: 0.9rem; color: var(--light-text-color); margin-top: 0.25rem; }
+.control-box { background-color: var(--bg-color); padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); }
+.control-box h2 { font-size: 1.1rem; margin-top: 0; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
+
+/* --- FORMS & BUTTONS --- */
+.input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+input[type="text"], input[type="password"] {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+}
+.find-vehicle .input-group { flex-direction: row; }
+.btn {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn:hover { opacity: 0.85; }
+.btn.btn-danger { background-color: var(--danger-color); }
+.info-text { font-size: 0.8rem; color: var(--light-text-color); text-align: center; margin-top: 1rem; margin-bottom: 0; }
+
+/* --- SPOT KEY STYLES --- */
+.spot-key { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; padding: 0.75rem; background-color: var(--panel-bg); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+.key-item { display: flex; align-items: center; font-size: 0.9rem; font-weight: 600; }
+.key-dot { width: 15px; height: 15px; border-radius: 50%; margin-right: 0.5rem; border: 2px solid white; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+.key-dot.staff-dot { background-color: var(--primary-color); }
+.key-dot.student-dot { background-color: var(--warning-color); }
+
+/* --- DASHBOARD & PARKING STYLES --- */
+#dashboard-container { display: flex; flex-direction: column; gap: 0.75rem; }
+.stat-card { background: #fff; padding: 0.75rem; border-radius: 6px; border-left: 5px solid; }
+.stat-card h3 { margin: 0 0 0.5rem 0; font-size: 1rem; }
+.stat-card-numbers { display: flex; justify-content: space-around; text-align: center; }
+.stat-card-numbers div p { margin: 0; font-size: 1.2rem; font-weight: 700; }
+.stat-card-numbers div span { font-size: 0.75rem; color: var(--light-text-color); text-transform: uppercase; }
+.stat-card.level-1 { border-color: #4a90e2; }
+.stat-card.level-2 { border-color: #50e3c2; }
+.stat-card.level-3 { border-color: #f5a623; }
+.stat-card.level-4 { border-color: #bd10e0; }
+#parking-levels-container { display: flex; flex-direction: column; gap: 2rem; }
+.parking-level { background: var(--panel-bg); padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+.parking-level h2 { margin-top: 0; margin-bottom: 1.5rem; color: var(--primary-color); }
+.spots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 1rem; }
+.spot { height: 60px; border-radius: 6px; display: flex; justify-content: center; align-items: center; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease-in-out; position: relative; border: 2px solid transparent; }
+.spot:hover { transform: translateY(-3px); }
+.spot::after { content: ''; position: absolute; bottom: 5px; left: 5px; width: 10px; height: 10px; border-radius: 50%; }
+.spot.staff::after { background-color: var(--primary-color); }
+.spot.student::after { background-color: var(--warning-color); }
+.spot.available { background-color: #e8f5e9; color: #388e3c; border: 2px dashed #a5d6a7; }
+.spot.occupied { background-color: #ffebee; color: #c62828; cursor: pointer; border: 2px solid #ef9a9a; }
+
+/* --- NEW: ADMIN DASHBOARD TABLE STYLES --- */
+.admin-table-container {
+    background-color: var(--panel-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 2rem;
+}
+.admin-table-container h2 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+.table-wrapper {
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+th, td {
+    padding: 0.8rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+th {
+    background-color: var(--bg-color);
+    font-weight: 600;
+}
+tbody tr:nth-child(even) {
+    background-color: var(--bg-color);
+}
+/* --- NEW: User Info & Logout Button Styles --- */
+.user-info {
+    background-color: var(--bg-color);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    text-align: center;
+}
+.user-info p {
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+}
+.user-info .btn-danger {
+    width: 100%;
+}

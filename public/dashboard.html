@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Parking Command Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="left-panel">
+            <header class="app-header">
+                <h1>Parking Command Center</h1>
+                <p>Campus Vehicle Management</p>
+            </header>
+
+            <section class="control-box">
+                <h2>Check-In Vehicle</h2>
+                <div class="input-group">
+                    <input type="text" id="license-plate" placeholder="License Plate">
+                    <input type="text" id="owner-id" placeholder="Student/Staff ID">
+                </div>
+                <p class="info-text">To check-in, fill details above and click an available spot.</p>
+            </section>
+
+            <section class="control-box">
+                <h2>Find Vehicle</h2>
+                <div class="input-group">
+                    <input type="text" id="find-plate" placeholder="Enter License Plate">
+                    <button id="find-btn" class="btn">Find</button>
+                </div>
+            </section>
+
+            <section class="control-box">
+                <h2>Live Statistics</h2>
+                <div id="dashboard-container">
+                    </div>
+            </section>
+        </aside>
+
+        <main class="right-panel">
+            <div class="spot-key">
+                <div class="key-item">
+                    <span class="key-dot staff-dot"></span> Staff Parking
+                </div>
+                <div class="key-item">
+                    <span class="key-dot student-dot"></span> Student Parking
+                </div>
+            </div>
+
+            <div id="parking-levels-container">
+                </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
